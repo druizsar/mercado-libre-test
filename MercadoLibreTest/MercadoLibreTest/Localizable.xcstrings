@@ -1,0 +1,53 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "" : {
+
+    },
+    "Enter a search term to find products." : {
+
+    },
+    "No results found." : {
+
+    },
+    "Please entre a search term" : {
+
+    },
+    "Price: %@ %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Price: %1$@ %2$@"
+          }
+        }
+      }
+    },
+    "Price: %lf %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Price: %1$lf %2$@"
+          }
+        }
+      }
+    },
+    "Product Search" : {
+
+    },
+    "Products" : {
+
+    },
+    "Search" : {
+
+    },
+    "Search..." : {
+
+    },
+    "Sorry, we can't complete your request at the moment" : {
+
+    }
+  },
+  "version" : "1.0"
+}
