@@ -4,13 +4,28 @@
     "" : {
 
     },
+    "Buy on site" : {
+
+    },
+    "Condition: %@" : {
+
+    },
+    "Currency: %@" : {
+
+    },
     "Enter a search term to find products." : {
 
     },
     "No results found." : {
 
     },
-    "Please entre a search term" : {
+    "Please check your internet connection." : {
+
+    },
+    "Please enter a search term." : {
+
+    },
+    "Price: %@" : {
 
     },
     "Price: %@ %@" : {
@@ -33,6 +48,9 @@
         }
       }
     },
+    "Product Details" : {
+
+    },
     "Product Search" : {
 
     },
@@ -45,7 +63,7 @@
     "Search..." : {
 
     },
-    "Sorry, we can't complete your request at the moment" : {
+    "Sorry, we can't complete your request at the moment." : {
 
     }
   },

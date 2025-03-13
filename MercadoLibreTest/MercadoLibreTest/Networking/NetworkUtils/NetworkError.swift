@@ -14,4 +14,5 @@ enum NetworkError: Error {
     case invalidResponse
     case decodingFailed(Error)
     case noData
+    case noConnection
 }

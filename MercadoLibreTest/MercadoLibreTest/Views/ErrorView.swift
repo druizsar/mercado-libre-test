@@ -13,6 +13,7 @@ struct ErrorView: View {
         case noResults
         case networkError
         case missingInput
+        case noInternet
     }
     
     let errorType: ErrorType
@@ -40,6 +41,8 @@ struct ErrorView: View {
             return "questionmark.diamond.fill"
         case .networkError:
             return "exclamationmark.triangle.fill"
+        case .noInternet:
+            return "wifi.slash"
         }
     }
     
@@ -51,6 +54,8 @@ struct ErrorView: View {
             return AppStrings.netrorkError
         case .missingInput:
             return AppStrings.noInput
+        case .noInternet:
+            return AppStrings.noInternet
         }
     }
 }

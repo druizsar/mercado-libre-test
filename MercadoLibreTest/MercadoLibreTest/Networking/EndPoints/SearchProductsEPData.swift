@@ -7,13 +7,13 @@
 
 import Foundation
 
-struct SearchProductsResponse: Codable {
+struct SearchProductsResponse: Codable, Equatable {
     let site_id: String
     let query: String
     let results: [SearchProductsResult]
 }
 
-struct SearchProductsResult: Codable {
+struct SearchProductsResult: Codable, Equatable {
     let id: String
     let title: String
     let currency_id: String
@@ -22,7 +22,7 @@ struct SearchProductsResult: Codable {
 }
 
 
-struct ProductDetailResponse: Codable {
+struct ProductDetailResponse: Codable, Equatable {
     let id: String
     let title: String
     let price: Double?
@@ -33,7 +33,7 @@ struct ProductDetailResponse: Codable {
     let pictures: [ProductDetailImages]
 }
 
-struct ProductDetailImages: Codable {
+struct ProductDetailImages: Codable, Equatable {
     let id: String
     let secure_url: String
 }

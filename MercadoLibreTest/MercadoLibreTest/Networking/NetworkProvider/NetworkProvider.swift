@@ -12,14 +12,36 @@ import Network
 class NetworkProvider: NetworkProviderProtocol {
 
     static let shared = NetworkProvider()
-
+    
     private let session: URLSession
+    private let monitor = NWPathMonitor()
+    private let queue = DispatchQueue(label: "NetworkMonitor")
+    
+    @Published var isConnected: Bool = true
 
     private init(session: URLSession = .shared) {
         self.session = session
+        startMonitoring()
     }
-
+    
+    private func startMonitoring() {
+        monitor.start(queue: queue)
+        monitor.pathUpdateHandler = { [weak self] path in
+            DispatchQueue.main.async {
+                self?.isConnected = path.status == .satisfied
+            }
+        }
+    }
+    
+    deinit {
+        monitor.cancel()
+    }
+    
     func request<T: Decodable>(endpoint: Endpoint) async throws -> T {
+        guard isConnected else {
+            throw NetworkError.noConnection
+        }
+        
         guard let url = endpoint.url else {
             throw NetworkError.invalidURL
         }

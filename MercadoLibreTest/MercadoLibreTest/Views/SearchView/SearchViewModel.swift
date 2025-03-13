@@ -11,7 +11,8 @@ import SwiftUI
 
 // ViewModel for the searchView
 class SearchViewModel: ObservableObject {
-    enum ViewState {
+    
+    enum ViewState: Equatable {
         case idle
         case loading
         case loaded
@@ -20,6 +21,7 @@ class SearchViewModel: ObservableObject {
     }
 
     enum ErrorType {
+        case noInternet
         case network
         case noInput
     }
@@ -27,10 +29,10 @@ class SearchViewModel: ObservableObject {
     @Published var viewState: ViewState = .idle
     @Published var products: [SearchProductsResult] = []
 
-    private let networkProvider: NetworkProviderProtocol
+    private let networkProvider: any NetworkProviderProtocol
     private var task: Task<(), Never>? = nil
 
-    init(networkProvider: NetworkProviderProtocol = NetworkProvider.shared) {
+    init(networkProvider: any NetworkProviderProtocol = NetworkProvider.shared) {
         self.networkProvider = networkProvider
     }
     
@@ -56,7 +58,17 @@ class SearchViewModel: ObservableObject {
                     }
                 } catch {
                     DispatchQueue.main.async { [weak self] in
-                        self?.viewState = .error(.network)
+                        if let networkError = error as? NetworkError {
+                            
+                            switch networkError {
+                            case .noConnection:
+                                self?.viewState = .error(.noInternet)
+                            default:
+                                self?.viewState = .error(.network)
+                            }
+                        } else {
+                            self?.viewState = .error(.network)
+                        }
                     }
                 }
             }

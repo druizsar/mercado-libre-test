@@ -20,6 +20,7 @@ struct SearchView: View {
                     }
                 )
                 .padding(.horizontal)
+                .padding(.top)
                 
                 switch viewModel.viewState {
                 case .idle:
@@ -34,6 +35,8 @@ struct SearchView: View {
                         ErrorView(errorType: .networkError)
                     case .noInput:
                         ErrorView(errorType: .missingInput)
+                    case .noInternet:
+                        ErrorView(errorType: .noInternet)
                     }
                 case .noResults:
                     ErrorView(errorType: .noResults)
