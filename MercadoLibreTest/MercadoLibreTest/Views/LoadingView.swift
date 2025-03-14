@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// Utility loading view
 struct LoadingView : View{
     var body: some View {
         VStack {

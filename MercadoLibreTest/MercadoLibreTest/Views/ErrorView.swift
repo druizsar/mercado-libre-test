@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-
+// Utility view to display different errors to the user.
 struct ErrorView: View {
     enum ErrorType {
         case noResults

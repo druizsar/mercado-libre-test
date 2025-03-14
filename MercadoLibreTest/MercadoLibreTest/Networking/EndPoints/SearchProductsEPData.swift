@@ -7,6 +7,7 @@
 
 import Foundation
 
+// Codable structs defining the data returned by the Search products EP
 struct SearchProductsResponse: Codable, Equatable {
     let site_id: String
     let query: String

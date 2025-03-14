@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+// Main product detail view. It contains a switch to describe the view
+// accroding to the view model states.
 struct ProductDetailView: View {
     let productId: String
     @StateObject private var viewModel = ProductDetailViewModel()

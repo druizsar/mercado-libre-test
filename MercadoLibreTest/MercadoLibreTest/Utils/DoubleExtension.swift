@@ -10,6 +10,8 @@ import Foundation
 
 // Util extension for double values
 extension Double {
+    
+    // Function to format a double string as currency
     func currencyFormat(_ numOfDecimals: Int = 2, currencyCode: String = "COP") -> String {
         let currencyFormatter = NumberFormatter()
         currencyFormatter.numberStyle = .currency

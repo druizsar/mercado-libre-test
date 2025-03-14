@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// View that describes the product details, includes images and basic information
 struct ProductDescriptionView: View {
     
     @ObservedObject var viewModel: ProductDetailViewModel

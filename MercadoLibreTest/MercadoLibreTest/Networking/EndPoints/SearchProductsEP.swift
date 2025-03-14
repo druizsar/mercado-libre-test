@@ -7,7 +7,7 @@
 
 import Foundation
 
-// Enum defining the search product EP
+// Enum defining the search product EP, it implements the EndPoint protocol.
 // For this initial implementation the search product option is limited to Mercado Libre Colombia
 // plus no pagination is considered.
 

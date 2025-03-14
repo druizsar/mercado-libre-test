@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+// Main search view. It contains a switch to describe the view
+// accroding to the view model states and a search bar.
 struct SearchView: View {
     @StateObject private var viewModel = SearchViewModel()
     @State private var searchQuery: String = ""

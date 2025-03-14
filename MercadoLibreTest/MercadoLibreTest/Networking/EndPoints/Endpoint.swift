@@ -7,7 +7,8 @@
 
 import Foundation
 
-// Protocol that defines the EP used by the app
+// Protocol that defines the EP used by the network provider.
+// The protocol contains all the information required to make a request to an EP
 protocol Endpoint {
     var baseURL: String { get }
     var path: String { get }

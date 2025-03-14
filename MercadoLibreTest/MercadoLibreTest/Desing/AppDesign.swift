@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-// Util functions and structs to customize the app style
+// Struct containig the colors used in the app
 struct AppDesign {
     static let primaryColor = Color(red: 0.2, green: 0.6, blue: 0.8)
     static let onPrimaryColor = Color.white

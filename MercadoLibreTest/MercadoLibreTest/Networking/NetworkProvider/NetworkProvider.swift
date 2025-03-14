@@ -8,7 +8,9 @@
 import Foundation
 import Network
 
-// Implementation of the network provider
+// Implementation of the network provider, that allows to make network request to an EndPoint.
+// It is implemented as a singleton.
+// It contains network monitor to check the device connection status.
 class NetworkProvider: NetworkProviderProtocol {
 
     static let shared = NetworkProvider()
